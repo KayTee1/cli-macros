@@ -104,6 +104,9 @@ void DataManager::addData()
         cerr << "Error: Unable to open file " << filename << endl;
         return;
     }
+    cout << "This meal had: \n";
+    cout << "Protein: " << currentData.getProtein() << "g\n";
+    cout << "Calories: " << currentData.getCalories() << "kcal\n";
     bool isTodayLatest = this->isTodayLatest();
     if (!isTodayLatest)
     {

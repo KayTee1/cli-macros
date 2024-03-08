@@ -37,8 +37,6 @@ void CurrentData::setDate()
 
     // Assign the formatted date string to the date member variable
     this->date = ss.str();
-
-    std::cout << "Today's date: " << this->date << "\n"; // Print the formatted date
 }
 
 std::string CurrentData::getDate() const
