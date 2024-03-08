@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "name": "eggs",
+      "calories": 216.5,
+      "serving_size_g": 150,
+      "fat_total_g": 14.1,
+      "fat_saturated_g": 4.7,
+      "protein_g": 18.9,
+      "sodium_mg": 215,
+      "potassium_mg": 300,
+      "cholesterol_mg": 560,
+      "carbohydrates_total_g": 1.1,
+      "fiber_g": 0,
+      "sugar_g": 0.6
+    }
+  ]
+}
