@@ -3,7 +3,6 @@
 #include "DataManager/DataManager.h"
 
 using namespace std;
-std::string getCurrentDate();
 
 void addMeal(DataManager dataManager)
 {
@@ -32,12 +31,12 @@ int main()
     int calorieGoal = 2300;
     int proteinGoal = 160;
     int eatenCalories = 2000;
-    int eatenProtein = 100;
+    int eatenProtein = 140;
 
     int remainingCalories = calorieGoal - eatenCalories;
     int remainingProtein = proteinGoal - eatenProtein;
 
-    cout << "\nToday's macros:\n";
+    cout << "\nToday's eaten macros:\n";
     cout << "Protein: " << eatenProtein << "g\n";
     cout << "Calories: " << eatenCalories << "\n\n";
     cout << remainingCalories << " calories left\n";

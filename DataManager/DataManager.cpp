@@ -29,8 +29,7 @@ std::string DataManager::getQuery() const
 
 void DataManager::fetchData(std::string &query)
 {
-    using namespace std;
-    std::string command = "node ../macros/api/fetch.js " + query;
+    std::string command = "node ../cli-macros/api/fetch.js " + query;
     std::cout << "Command: " << command << std::endl;
     system(command.c_str());
 }

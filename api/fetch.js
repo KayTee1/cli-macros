@@ -29,7 +29,7 @@ if (!query) {
 
 const writeData = (data) => {
   fs.writeFile(
-    "../macros/db/apiResult.json",
+    "../cli-macros/db/apiResult.json",
     JSON.stringify(data, null, 2),
     (err) => {
       if (err) {
@@ -41,5 +41,4 @@ const writeData = (data) => {
   );
 };
 
-// Example usage:
 fetchData(query).then((data) => writeData(data));
