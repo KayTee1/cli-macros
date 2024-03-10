@@ -7,9 +7,8 @@
 
 void DataManager::setQuery(std::string &query)
 {
-    using namespace std;
     this->query = query;
-    ofstream outFile;
+    std::ofstream outFile;
     outFile.open("./db/query.txt");
     if (outFile.is_open())
     {
@@ -18,7 +17,7 @@ void DataManager::setQuery(std::string &query)
     }
     else
     {
-        cout << "Unable to open file" << endl;
+        std::cout << "Unable to open file\n";
     }
 }
 
@@ -30,18 +29,18 @@ std::string DataManager::getQuery() const
 void DataManager::fetchData(std::string &query)
 {
     std::string command = "node ../cli-macros/api/fetch.js " + query;
-    std::cout << "Command: " << command << std::endl;
     system(command.c_str());
 }
 
 void DataManager::readApiData()
 {
-    using namespace std;
-    ifstream inFile;
+    using std::string;
+
+    std::ifstream inFile;
     inFile.open("./db/apiResult.json");
     if (!inFile.is_open())
     {
-        cout << "Unable to open file" << endl;
+        std::cout << "Unable to open file\n";
         return;
     }
     string line;
@@ -72,16 +71,15 @@ void DataManager::readApiData()
 
 bool DataManager::isTodayLatest()
 {
-    using namespace std;
-    ifstream inFile;
+    std::fstream inFile;
     inFile.open("./db/historical_data.csv");
     if (!inFile.is_open())
     {
-        cout << "Unable to open file" << endl;
+        std::cout << "Unable to open file\n";
         exit(1);
     }
     currentData.setDate();
-    string line;
+    std::string line;
     while (getline(inFile, line))
     {
         if (line.find(currentData.getDate()) != std::string::npos)
@@ -113,7 +111,9 @@ void DataManager::addData()
         outFile.open(filename, ios_base::app);
         stringstream newDataStream;
         newDataStream << "\n"
-                      << currentData.getDate() << "," << fixed << setprecision(1) << currentData.getProtein() << "," << fixed << setprecision(1) << currentData.getCalories();
+                      << currentData.getDate() << "," << fixed << setprecision(1)
+                      << currentData.getProtein() << ","
+                      << fixed << setprecision(1) << currentData.getCalories();
         string newData = newDataStream.str();
 
         outFile << newData;
